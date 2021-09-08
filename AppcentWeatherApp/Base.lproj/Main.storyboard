@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5gk-6l-RTm">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Page View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="MainPageViewController" id="BYZ-38-t0r" customClass="MainPageViewController" customModule="AppcentWeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="GradientView" customModule="AppcentWeatherApp" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zt0-kc-Sk3" customClass="GradientView" customModule="AppcentWeatherApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3xc-IA-KuY">
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="3xc-IA-KuY" secondAttribute="bottom" id="KfJ-jS-DSn"/>
+                                    <constraint firstItem="3xc-IA-KuY" firstAttribute="leading" secondItem="Zt0-kc-Sk3" secondAttribute="leading" id="PnZ-yG-17P"/>
+                                    <constraint firstAttribute="trailing" secondItem="3xc-IA-KuY" secondAttribute="trailing" id="jJa-0q-Ptn"/>
+                                    <constraint firstItem="3xc-IA-KuY" firstAttribute="top" secondItem="Zt0-kc-Sk3" secondAttribute="top" id="mca-RM-yec"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Zt0-kc-Sk3" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NTR-bd-SjH"/>
+                            <constraint firstItem="Zt0-kc-Sk3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="P2a-fv-Bv7"/>
+                            <constraint firstAttribute="bottom" secondItem="Zt0-kc-Sk3" secondAttribute="bottom" id="Y60-ei-Nn2"/>
+                            <constraint firstItem="Zt0-kc-Sk3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="h3T-jl-MHv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zjV-jr-ilb"/>
+                    <connections>
+                        <outlet property="viewModel" destination="JEx-Bo-aYx" id="sEE-kf-UJP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="JEx-Bo-aYx" customClass="MainPageViewModel" customModule="AppcentWeatherApp" customModuleProvider="target">
+                    <connections>
+                        <outlet property="mainView" destination="Zt0-kc-Sk3" id="WA9-Wt-ryW"/>
+                        <outlet property="tableView" destination="3xc-IA-KuY" id="lnk-Xl-W38"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="831.88405797101461" y="93.75"/>
+        </scene>
+        <!--Detail Page View Controller-->
+        <scene sceneID="J7f-dV-aLc">
+            <objects>
+                <viewController storyboardIdentifier="DetailPageViewController" id="O2h-Ls-gfV" customClass="DetailPageViewController" customModule="AppcentWeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TOQ-Js-rSM">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GEb-n5-018" customClass="GradientView" customModule="AppcentWeatherApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="300"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="gaf-DO-DDQ"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sVI-t2-OFD">
+                                <rect key="frame" x="0.0" y="44" width="428" height="882"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dmx-ef-bKl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sVI-t2-OFD" firstAttribute="top" secondItem="dmx-ef-bKl" secondAttribute="top" id="6Td-HG-DgT"/>
+                            <constraint firstItem="GEb-n5-018" firstAttribute="leading" secondItem="dmx-ef-bKl" secondAttribute="leading" id="XN8-9h-qZj"/>
+                            <constraint firstItem="GEb-n5-018" firstAttribute="trailing" secondItem="dmx-ef-bKl" secondAttribute="trailing" id="oD5-MD-Vja"/>
+                            <constraint firstAttribute="bottom" secondItem="sVI-t2-OFD" secondAttribute="bottom" id="oX7-IR-ZCb"/>
+                            <constraint firstItem="sVI-t2-OFD" firstAttribute="leading" secondItem="dmx-ef-bKl" secondAttribute="leading" id="prc-0b-cZe"/>
+                            <constraint firstItem="sVI-t2-OFD" firstAttribute="trailing" secondItem="dmx-ef-bKl" secondAttribute="trailing" id="tGo-Su-5y2"/>
+                            <constraint firstItem="GEb-n5-018" firstAttribute="top" secondItem="TOQ-Js-rSM" secondAttribute="top" id="uiC-nt-lra"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="GEb-n5-018" id="7Ub-Oz-Mpt"/>
+                        <outlet property="tableView" destination="sVI-t2-OFD" id="Ghx-cq-NPG"/>
+                        <outlet property="viewModel" destination="AGQ-9R-aeN" id="Bsl-I3-q5i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SOh-NR-cAN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="AGQ-9R-aeN" customClass="DetailPageViewModel" customModule="AppcentWeatherApp" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="2464.4859813084113" y="93.952483801295898"/>
+        </scene>
+        <!--Search Page View Controller-->
+        <scene sceneID="gGw-HP-rmC">
+            <objects>
+                <viewController storyboardIdentifier="SearchPageViewController" id="jLG-dq-FKi" customClass="SearchPageViewController" customModule="AppcentWeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VZ5-f8-UY2">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UYZ-4p-fsa" customClass="GradientView" customModule="AppcentWeatherApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aWq-OJ-Ekf" customClass="SearchPageTableView" customModule="AppcentWeatherApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="144" width="428" height="782"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </tableView>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="LPA-FM-9Aa" customClass="CustomSearchBar" customModule="AppcentWeatherApp" customModuleProvider="target">
+                                        <rect key="frame" x="12" y="100" width="396" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="ytG-5l-6cf"/>
+                                        </constraints>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="aWq-OJ-Ekf" secondAttribute="bottom" id="6vM-Gp-dQ2"/>
+                                    <constraint firstItem="LPA-FM-9Aa" firstAttribute="leading" secondItem="UYZ-4p-fsa" secondAttribute="leading" constant="12" id="8wC-vr-iI8"/>
+                                    <constraint firstAttribute="trailing" secondItem="LPA-FM-9Aa" secondAttribute="trailing" constant="20" id="Jng-nv-hOF"/>
+                                    <constraint firstItem="aWq-OJ-Ekf" firstAttribute="top" secondItem="LPA-FM-9Aa" secondAttribute="bottom" id="K5B-De-tHc"/>
+                                    <constraint firstAttribute="trailing" secondItem="aWq-OJ-Ekf" secondAttribute="trailing" id="PXT-9C-7Ir"/>
+                                    <constraint firstItem="aWq-OJ-Ekf" firstAttribute="leading" secondItem="UYZ-4p-fsa" secondAttribute="leading" id="WGv-0m-6Bn"/>
+                                    <constraint firstItem="LPA-FM-9Aa" firstAttribute="top" secondItem="UYZ-4p-fsa" secondAttribute="top" constant="100" id="o3E-HA-m2Y"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4i6-UD-AyX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UYZ-4p-fsa" firstAttribute="trailing" secondItem="4i6-UD-AyX" secondAttribute="trailing" id="ASn-X2-8SI"/>
+                            <constraint firstItem="UYZ-4p-fsa" firstAttribute="top" secondItem="VZ5-f8-UY2" secondAttribute="top" id="DJa-hb-gu2"/>
+                            <constraint firstItem="UYZ-4p-fsa" firstAttribute="leading" secondItem="4i6-UD-AyX" secondAttribute="leading" id="nsL-WM-JaO"/>
+                            <constraint firstAttribute="bottom" secondItem="UYZ-4p-fsa" secondAttribute="bottom" id="scx-um-Hh4"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="arF-2A-y6h"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="mainView" destination="aWq-OJ-Ekf" id="8o3-zb-boT"/>
+                        <outlet property="searchBar" destination="LPA-FM-9Aa" id="PkX-nC-Jre"/>
+                        <outlet property="tableView" destination="aWq-OJ-Ekf" id="bQj-aW-hzD"/>
+                        <outlet property="viewModel" destination="Bt9-6u-0Fb" id="QL3-6y-hGk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CZQ-pH-7gF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="Bt9-6u-0Fb" customClass="SearchPageViewModel" customModule="AppcentWeatherApp" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="1648.5981308411215" y="93.952483801295898"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9FR-Xj-Kt3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5gk-6l-RTm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XVp-uG-Lb3">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="W2U-1u-2wW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LW0-yR-xNi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-78.260869565217391" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

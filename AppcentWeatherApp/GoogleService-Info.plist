@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1038968967653-ncc2tcqu87kq0ns6e2u60nj2g4106hm5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1038968967653-ncc2tcqu87kq0ns6e2u60nj2g4106hm5</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB8varuACPj0ZmXk9PHMsTXRw1nJPJ3i8I</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1038968967653</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Acemi.AppcentWeatherApp</string>
+	<key>PROJECT_ID</key>
+	<string>appcentweatherapp</string>
+	<key>STORAGE_BUCKET</key>
+	<string>appcentweatherapp.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1038968967653:ios:18915a04b48fde87845f0c</string>
+</dict>
+</plist>
