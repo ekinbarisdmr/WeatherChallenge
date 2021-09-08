@@ -12,14 +12,14 @@ class DetailPageViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var viewModel: DetailPageViewModel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .clear
         requestStatus = .pending
         viewModel.delegate = self
         checkInternet()
-    
+        
     }
     
     func setups() {
@@ -104,8 +104,6 @@ extension DetailPageViewController: UITableViewDataSource {
         headerView.configure(viewModel.weatherDetails)
         return headerView
     }
-    
-    
 }
 
 //MARK: UITableViewDelegate
@@ -123,11 +121,22 @@ extension DetailPageViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 450
+        return 400
     }
 }
 
 extension DetailPageViewController: DetailPageViewModelDelegate {
+    
+    func savedCity(result: Bool) {
+        if result {
+            Alert.showAlert(viewController: self, title: savedCityTitle, message: savedCityMessage)
+            
+        }
+        else {
+            view.shake()
+            Alert.showAlert(viewController: self, title: savedCityErrorTitle, message: savedCityErrorMessage)
+        }
+    }
     
     func changedStatus(status: BaseViewController.RequestStatus) {
         requestStatus = status
@@ -139,17 +148,12 @@ extension DetailPageViewController: DetailPageViewModelDelegate {
                 else {
                     setups()
                 }
+            case .unknown:
+                Alert.showAlert(viewController: self, title: internetErrorTitle, message: internetErrorMessage)
             default: break
         }
     }
-    
-    
 }
 
-extension Array {
-    func contains<T>(obj: T) -> Bool where T : Equatable {
-        return self.filter({$0 as? T == obj}).count > 0
-    }
-}
 
 

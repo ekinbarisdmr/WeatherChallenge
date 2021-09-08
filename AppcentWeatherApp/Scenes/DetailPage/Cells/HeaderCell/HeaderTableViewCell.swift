@@ -2,7 +2,7 @@
 //  HeaderTableViewCell.swift
 //  AppcentWeatherApp
 //
-//  Created by Ekin Barış Demir on 5.09.2021.
+//  Created by Ekin Barış Demir on 4.09.2021.
 //
 
 import UIKit
@@ -28,12 +28,11 @@ class HeaderTableViewCell: UITableViewCell {
     @IBOutlet weak var windLabel: CustomGrayLabel!
     @IBOutlet weak var humidityLabel: CustomGrayLabel!
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         DispatchQueue.main.async {
             self.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 60)
-            
         }
     }
     
@@ -66,8 +65,6 @@ class HeaderTableViewCell: UITableViewCell {
             if let visibility = (detay.visibility)?.round(to: 0) {
                 visibilityKmLabel.text = "\(visibility) km"
             }
-            
-//            titleImg.kf.setImage(with: URL(string: item.img_src), placeholder: UIImage.init(named: "defaultImage"), options: [.transition(.fade(1))], progressBlock: nil, completionHandler: nil)
             
             if let img = detay.weather_state_abbr {
                 let url = "https://www.metaweather.com/static/img/weather/ico/\(img).ico"

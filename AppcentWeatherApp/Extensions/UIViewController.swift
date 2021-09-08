@@ -2,7 +2,7 @@
 //  UIViewController.swift
 //  AppcentWeatherApp
 //
-//  Created by Ekin Barış Demir on 8.09.2021.
+//  Created by Ekin Barış Demir on 5.09.2021.
 //
 
 import Foundation

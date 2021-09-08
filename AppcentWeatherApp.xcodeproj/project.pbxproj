@@ -14,7 +14,6 @@
 		313886D726E533B7003E5E16 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313886D626E533B7003E5E16 /* GradientView.swift */; };
 		313886DB26E55761003E5E16 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313886DA26E55761003E5E16 /* NetworkManager.swift */; };
 		313886DD26E55C13003E5E16 /* UIAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313886DC26E55C13003E5E16 /* UIAlert.swift */; };
-		313886E626E65993003E5E16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 313886E526E65993003E5E16 /* GoogleService-Info.plist */; };
 		313886E826E6D884003E5E16 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313886E726E6D884003E5E16 /* Constant.swift */; };
 		313886EA26E6D982003E5E16 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313886E926E6D981003E5E16 /* UITableViewExtension.swift */; };
 		313886EE26E78464003E5E16 /* SearchPageTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313886ED26E78464003E5E16 /* SearchPageTableView.swift */; };
@@ -51,6 +50,7 @@
 		31DA0F9A26E8E3DE000E1C8F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DA0F9926E8E3DE000E1C8F /* UIViewController.swift */; };
 		31DA0F9C26E8F00E000E1C8F /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31DA0F9B26E8F00E000E1C8F /* HeaderView.xib */; };
 		31DA0F9E26E8F01B000E1C8F /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DA0F9D26E8F01B000E1C8F /* HeaderView.swift */; };
+		31DA0FA026E934F9000E1C8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 31DA0F9F26E934F9000E1C8F /* GoogleService-Info.plist */; };
 		EA2395B84188E65C14355707 /* Pods_AppcentWeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F3FBC55CBA26237340BC2F6 /* Pods_AppcentWeatherApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +64,6 @@
 		313886D626E533B7003E5E16 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		313886DA26E55761003E5E16 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		313886DC26E55C13003E5E16 /* UIAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlert.swift; sourceTree = "<group>"; };
-		313886E526E65993003E5E16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		313886E726E6D884003E5E16 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		313886E926E6D981003E5E16 /* UITableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		313886ED26E78464003E5E16 /* SearchPageTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageTableView.swift; sourceTree = "<group>"; };
@@ -103,6 +102,7 @@
 		31DA0F9926E8E3DE000E1C8F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		31DA0F9B26E8F00E000E1C8F /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		31DA0F9D26E8F01B000E1C8F /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		31DA0F9F26E934F9000E1C8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9B856F7A80B88EE063424A7 /* Pods-AppcentWeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppcentWeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-AppcentWeatherApp/Pods-AppcentWeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -190,7 +190,7 @@
 				3153648726E133EE0067A570 /* CustomUI */,
 				3153648526E133D80067A570 /* SupportingFiles */,
 				3153647626E12EAA0067A570 /* Main.storyboard */,
-				313886E526E65993003E5E16 /* GoogleService-Info.plist */,
+				31DA0F9F26E934F9000E1C8F /* GoogleService-Info.plist */,
 				3153647E26E12EAC0067A570 /* Info.plist */,
 				3153647926E12EAC0067A570 /* Assets.xcassets */,
 				3153647B26E12EAC0067A570 /* LaunchScreen.storyboard */,
@@ -442,8 +442,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3153647D26E12EAC0067A570 /* LaunchScreen.storyboard in Resources */,
-				313886E626E65993003E5E16 /* GoogleService-Info.plist in Resources */,
 				315364B326E249070067A570 /* SearchPageTableViewCell.xib in Resources */,
+				31DA0FA026E934F9000E1C8F /* GoogleService-Info.plist in Resources */,
 				313886D326E4FDCA003E5E16 /* HeaderTableViewCell.xib in Resources */,
 				3153647A26E12EAC0067A570 /* Assets.xcassets in Resources */,
 				3153647826E12EAA0067A570 /* Main.storyboard in Resources */,
@@ -458,7 +458,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		313886E426E64F7A003E5E16 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 8;
 			files = (
 			);
 			inputFileListPaths = (
@@ -471,7 +471,7 @@
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
+			runOnlyForDeploymentPostprocessing = 1;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};

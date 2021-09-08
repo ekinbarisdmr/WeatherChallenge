@@ -2,10 +2,11 @@
 //  SearchPageViewController.swift
 //  AppcentWeatherApp
 //
-//  Created by Ekin Barış Demir on 3.09.2021.
+//  Created by Ekin Barış Demir on 4.09.2021.
 //
 
 import UIKit
+import Firebase
 
 class SearchPageViewController: BaseViewController {
     
@@ -15,13 +16,11 @@ class SearchPageViewController: BaseViewController {
     @IBOutlet weak var viewModel: SearchPageViewModel!
     let floatingButton = FloatingButton()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         requestStatus = .pending
         viewModel.delegate = self
         checkInternet()
-                
     }
 
     func setups() {
@@ -30,7 +29,6 @@ class SearchPageViewController: BaseViewController {
         setFloatingButton()
         setupNavigationBar()
         hideKeyboardWhenTappedAround()
-
     }
     
     func setupNavigationBar() {
@@ -76,7 +74,7 @@ class SearchPageViewController: BaseViewController {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let currentOffset = scrollView.contentOffset.y
-        if currentOffset > 150 {
+        if currentOffset > 500 {
             floatingButton.isHidden = false
         }
         else {
@@ -100,6 +98,11 @@ extension SearchPageViewController: CustomSearchBarOutputDelegate {
         }
         else {
             viewModel.getCityList(cityName: text)
+            
+            Analytics.logEvent("searched_city", parameters: [
+              "city_name": text ?? "-" as String,
+              
+            ])
         }
     }
 }
@@ -108,6 +111,7 @@ extension SearchPageViewController: SearchPageViewModelDelegate {
     
     func getCityList(response: [CityModel]) {
         self.tableView.cityList = response
+        
     }
     
     func changedStatus(status: BaseViewController.RequestStatus) {
@@ -120,6 +124,8 @@ extension SearchPageViewController: SearchPageViewModelDelegate {
                 else {
                     setups()
                 }
+            case .unknown:
+                Alert.showAlert(viewController: self, title: internetErrorTitle, message: internetErrorMessage )
             default: break
         }
     }

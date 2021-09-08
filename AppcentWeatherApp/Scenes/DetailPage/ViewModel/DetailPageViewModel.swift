@@ -2,14 +2,15 @@
 //  DetailPageViewModel.swift
 //  AppcentWeatherApp
 //
-//  Created by Ekin Barış Demir on 7.09.2021.
+//  Created by Ekin Barış Demir on 4.09.2021.
 //
 
 import UIKit
-
+import Firebase
 
 protocol DetailPageViewModelDelegate {
     func changedStatus(status: BaseViewController.RequestStatus)
+    func savedCity(result: Bool)
 }
 
 class DetailPageViewModel: NSObject {
@@ -20,7 +21,6 @@ class DetailPageViewModel: NSObject {
     var datesArray = [String]()
     var selectedCity = Int()
     var delegate: DetailPageViewModelDelegate?
-
 
     func fetchWeatherDetail() {
         API.sharedManager.getDetails(woeid: self.selectedCity) { [self] (response) in
@@ -33,6 +33,7 @@ class DetailPageViewModel: NSObject {
             self.delegate?.changedStatus(status: .completed(nil))
 
         } errorHandler: { (error) in
+            self.delegate?.changedStatus(status: .unknown)
             print(error)
         }
     }
@@ -54,19 +55,22 @@ class DetailPageViewModel: NSObject {
         if let title = weatherDetails.title,
            let woeid = weatherDetails.woeid,
            let locationType = weatherDetails.location_type {
-            print(title)
+            
+            Analytics.logEvent("saved_city", parameters: [
+              "city_name": title as NSObject,
+              
+            ])
             
             let match = savedCities.enumerated().first(where: { $0.element.title == title})
             if match != nil {
-                print("hata")
+                self.delegate?.savedCity(result: false)
             }
             else {
                 let newCity = SaveModel(title: title, location_type: locationType, woeid: woeid)
                 self.savedCities.insert(newCity, at: 0)
                 StoreManager.shared.saveCity(data: self.savedCities)
+                self.delegate?.savedCity(result: true)
             }
-            
-
         }
     }
 }

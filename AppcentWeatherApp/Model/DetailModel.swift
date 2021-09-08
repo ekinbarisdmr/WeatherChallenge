@@ -2,7 +2,7 @@
 //  DetailModel.swift
 //  AppcentWeatherApp
 //
-//  Created by Ekin Barış Demir on 4.09.2021.
+//  Created by Ekin Barış Demir on 3.09.2021.
 //
 
 import Foundation
@@ -22,7 +22,7 @@ struct DetailModel: Codable {
     var woeid : Int?
     var latt_long : String?
     var timezone : String?
-   
+    
 }
 
 struct Parent: Codable {

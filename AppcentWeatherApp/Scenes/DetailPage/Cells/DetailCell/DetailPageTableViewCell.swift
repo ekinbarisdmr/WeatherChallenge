@@ -31,7 +31,7 @@ class DetailPageTableViewCell: UITableViewCell {
         if let maxTemp = (model.max_temp)?.round(to: 0) {
             maxTempLabel.text = "\(maxTemp)°"
         }
-        
+
         if let minTemp = (model.min_temp)?.round(to: 0) {
             minTempLabel.text = "\(minTemp)°"
         }
@@ -51,6 +51,5 @@ class DetailPageTableViewCell: UITableViewCell {
         weatherLabel.textColor = UIColor.detailTextColor()
         minTempLabel.textColor = UIColor.detailTextColor()
         maxTempLabel.textColor = UIColor.detailText2Color()
-        
     }
 }

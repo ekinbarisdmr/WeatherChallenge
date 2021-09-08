@@ -2,7 +2,7 @@
 //  RequestModel.swift
 //  AppcentWeatherApp
 //
-//  Created by Ekin Barış Demir on 7.09.2021.
+//  Created by Ekin Barış Demir on 5.09.2021.
 //
 
 import Foundation

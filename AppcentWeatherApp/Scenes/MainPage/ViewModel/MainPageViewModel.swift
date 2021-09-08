@@ -2,7 +2,7 @@
 //  MainPageViewModel.swift
 //  AppcentWeatherApp
 //
-//  Created by Ekin Barış Demir on 2.09.2021.
+//  Created by Ekin Barış Demir on 3.09.2021.
 //
 
 import UIKit
@@ -48,6 +48,7 @@ class MainPageViewModel: NSObject {
             self.delegate?.changedStatus(status: .completed(nil))
             self.tableView.reloadData()
         } errorHandler: { (error) in
+            self.delegate?.changedStatus(status: .unknown)
             print(error)
         }
     }
@@ -77,12 +78,10 @@ class MainPageViewModel: NSObject {
             saved = true
             self.delegate?.tappedSavedButton(tapped: "book.fill", title: savePageTitle)
             self.savedCities = StoreManager.shared.getCity()
-            print(savedCities.count)
             tableView.reloadData()
         }
     }
 }
-
 //MARK: UITableViewDataSource
 
 extension MainPageViewModel: UITableViewDataSource {
@@ -92,7 +91,6 @@ extension MainPageViewModel: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         if saved {
             return savedCities.count
         }
@@ -101,9 +99,7 @@ extension MainPageViewModel: UITableViewDataSource {
         }
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(MainPageTableViewCell.self)!
         cell.backgroundColor = UIColor.clear
         cell.selectionStyle = .none
@@ -130,7 +126,6 @@ extension MainPageViewModel: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         if saved {
             self.delegate?.selectedItem(weatherModel: savedCities[indexPath.row].woeid ?? 0)
         }
@@ -140,7 +135,6 @@ extension MainPageViewModel: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
         if saved {
             if editingStyle == UITableViewCell.EditingStyle.delete {
                 savedCities.remove(at: indexPath.row)
@@ -148,13 +142,15 @@ extension MainPageViewModel: UITableViewDelegate {
                 tableView.reloadData()
             }
         }
+        else {
+            mainView.shake()
+        }
     }
 }
 
 extension MainPageViewModel: CLLocationManagerDelegate {
-    
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
         let lastLocation: CLLocation = locations[locations.count - 1]
         let longitude = "\((lastLocation.coordinate.longitude).round(to: 2))"
         let latitude = "\((lastLocation.coordinate.latitude).round(to: 2))"

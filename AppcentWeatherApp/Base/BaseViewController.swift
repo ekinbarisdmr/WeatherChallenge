@@ -2,7 +2,7 @@
 //  BaseViewController.swift
 //  AppcentWeatherApp
 //
-//  Created by Ekin Barış Demir on 2.09.2021.
+//  Created by Ekin Barış Demir on 3.09.2021.
 //
 
 import UIKit
@@ -13,6 +13,7 @@ class BaseViewController: UIViewController {
     enum RequestStatus {
         case unknown, pending, completed(Error?)
     }
+    
     var shouldHideSubviewsOnRequestStatusChange = true
     var requestStatus: RequestStatus = .unknown {
         didSet {

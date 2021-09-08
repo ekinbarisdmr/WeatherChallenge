@@ -2,7 +2,7 @@
 //  MainPageViewController.swift
 //  AppcentWeatherApp
 //
-//  Created by Ekin Barış Demir on 2.09.2021.
+//  Created by Ekin Barış Demir on 3.09.2021.
 //
 
 import UIKit
@@ -21,9 +21,8 @@ class MainPageViewController: BaseViewController {
         viewModel.delegate = self
         requestStatus = .pending
         checkInternetConnection()
-        //        fatalError()                              ** For Firebase Crashlytics **
     }
-    
+        
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewModel.setupTableView()
@@ -39,7 +38,6 @@ class MainPageViewController: BaseViewController {
     }
     
     func checkInternetConnection() {
-        
         if CheckInternet.Connection() {
             setups()
         }
@@ -49,7 +47,6 @@ class MainPageViewController: BaseViewController {
     }
     
     func setupNavigatonController() {
-        
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
@@ -63,10 +60,10 @@ class MainPageViewController: BaseViewController {
         self.navigationItem.hidesSearchBarWhenScrolling = false
         definesPresentationContext = true
         self.navigationItem.title = self.pageTitle
+        
         self.searchButton = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass") , style: .done, target: viewModel, action: #selector(viewModel.tappedSearch(sender:)))
-        self.savedCities = UIBarButtonItem(image: UIImage(systemName: savedButtonImage), style: .done, target: viewModel, action: #selector(viewModel.tappedSavedList(sender:)))
+        self.savedCities = UIBarButtonItem(image: UIImage(systemName: self.saveButtonImage), style: .done, target: viewModel, action: #selector(viewModel.tappedSavedList(sender:)))
         self.navigationItem.setRightBarButtonItems([searchButton, savedCities], animated: true)
-    
     }
     
     func setFloatingButton() {
@@ -83,19 +80,16 @@ class MainPageViewController: BaseViewController {
 }
 
 extension MainPageViewController: MainPageViewModelDelegate {
-    
+
     func tappedSavedButton(tapped: String, title: String) {
         self.saveButtonImage = tapped
         self.pageTitle = title
         setupNavigatonController()
     }
-   
+    
     func tappedSearchButton(tapped: Bool) {
         if tapped == true {
             guard let searchVc = mainDelegate.mainStoryboard.instantiateViewController(identifier: "SearchPageViewController") as? SearchPageViewController else { return }
-//            let navController = UINavigationController(rootViewController: searchVc)
-//            navController.modalPresentationStyle = .fullScreen
-//            self.navigationController?.present(navController, animated: true, completion: nil)
             self.navigationController?.pushViewController(searchVc, animated: true)
         }
     }
@@ -117,6 +111,8 @@ extension MainPageViewController: MainPageViewModelDelegate {
                 else {
                     viewModel.tableView.reloadData()
                 }
+            case .unknown:
+                Alert.showAlert(viewController: self, title: internetErrorTitle, message: internetErrorMessage)
             default: break
         }
     }    

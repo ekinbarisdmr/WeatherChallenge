@@ -15,6 +15,5 @@ class Alert {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Okey", style: UIAlertAction.Style.default, handler: nil))
         viewController.present(alert, animated: true, completion: nil)
-        
     }
 }

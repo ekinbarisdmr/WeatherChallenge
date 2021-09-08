@@ -2,7 +2,7 @@
 //  SearchPageTableViewCell.swift
 //  AppcentWeatherApp
 //
-//  Created by Ekin Barış Demir on 3.09.2021.
+//  Created by Ekin Barış Demir on 4.09.2021.
 //
 
 import UIKit

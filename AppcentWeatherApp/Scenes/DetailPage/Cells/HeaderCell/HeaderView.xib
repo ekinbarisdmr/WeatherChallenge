@@ -219,7 +219,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="OHU-6K-ZcO" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="MMA-Fe-jY2"/>
                 <constraint firstItem="OHU-6K-ZcO" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="VGi-ci-H72"/>

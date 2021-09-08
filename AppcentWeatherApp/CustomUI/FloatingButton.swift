@@ -2,7 +2,7 @@
 //  FloatingButton.swift
 //  AppcentWeatherApp
 //
-//  Created by Ekin Barış Demir on 8.09.2021.
+//  Created by Ekin Barış Demir on 6.09.2021.
 //
 
 import Foundation
@@ -14,7 +14,7 @@ class FloatingButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        let window = UIApplication.shared.keyWindow
+        let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
         let bottomPadding = window?.safeAreaInsets.bottom
         frame = CGRect(x: UIScreen.main.bounds.width - 80 , y: UIScreen.main.bounds.height - bottomPadding! - 80, width: 56, height: 56)
         setImage(UIImage(named: "upicon"), for: .normal)
