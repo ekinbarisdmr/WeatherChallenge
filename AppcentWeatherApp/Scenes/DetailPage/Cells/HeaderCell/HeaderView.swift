@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class HeaderView: UIView {
 
@@ -76,10 +77,9 @@ class HeaderView: UIView {
             
             DispatchQueue.main.async {
                 self.mainView.roundCorners(corners: [.bottomLeft, .bottomRight], radius: 60)
-
+               
             }
 
-            
             if let img = detay.weather_state_abbr {
                 let url = "https://www.metaweather.com/static/img/weather/ico/\(img).ico"
                 if let imageUrl = URL(string: url) {
@@ -94,6 +94,11 @@ class HeaderView: UIView {
         humidityLabel.text = "Humidity"
         visibilityLabel.text = "Visibility"
         cityLabel.text = detailModel.title
+        
+        Analytics.logEvent("review_city", parameters: [
+            "city_name": detailModel.title ?? "-" as String,
+          
+        ])
     }
 }
 

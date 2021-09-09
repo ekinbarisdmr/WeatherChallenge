@@ -88,7 +88,7 @@ extension MainPageViewController: MainPageViewModelDelegate {
     }
     
     func tappedSearchButton(tapped: Bool) {
-        if tapped == true {
+        if tapped {
             guard let searchVc = mainDelegate.mainStoryboard.instantiateViewController(identifier: "SearchPageViewController") as? SearchPageViewController else { return }
             self.navigationController?.pushViewController(searchVc, animated: true)
         }

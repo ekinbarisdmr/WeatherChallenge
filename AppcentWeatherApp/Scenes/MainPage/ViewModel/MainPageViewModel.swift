@@ -119,6 +119,8 @@ extension MainPageViewModel: UITableViewDataSource {
     }
 }
 
+//MARK: UITableViewDelegate
+
 extension MainPageViewModel: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

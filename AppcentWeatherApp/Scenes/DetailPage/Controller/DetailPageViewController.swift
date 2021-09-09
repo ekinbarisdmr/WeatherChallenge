@@ -51,7 +51,6 @@ class DetailPageViewController: BaseViewController {
     
     func setupTableView() {
         tableView.register(DetailPageTableViewCell.self)
-        tableView.register(HeaderTableViewCell.self)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
@@ -69,26 +68,11 @@ extension DetailPageViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if section == 0 {
-//            return 1
-//        }
-//        else {
-//            return viewModel.details.count
-//        }
         return viewModel.details.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-//        if indexPath.section == 0 {
-//            let cell = tableView.dequeueReusableCell(HeaderTableViewCell.self)!
-//            cell.backgroundColor = .clear
-//            DispatchQueue.main.async { [self] in
-//                cell.configure(viewModel.weatherDetails)
-//            }
-//            return cell
-//        }
-//        else {
             let cell = tableView.dequeueReusableCell(DetailPageTableViewCell.self)!
             cell.backgroundColor = UIColor.detailBgColor()
             DispatchQueue.main.async { [self] in
@@ -96,7 +80,6 @@ extension DetailPageViewController: UITableViewDataSource {
                 cell.dayLabel.text = viewModel.datesArray[indexPath.row]
             }
             return cell
-//        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -111,12 +94,6 @@ extension DetailPageViewController: UITableViewDataSource {
 extension DetailPageViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if indexPath.section == 0 {
-//            return 450
-//        }
-//        else {
-//            return 120
-//        }
         return 120
     }
     

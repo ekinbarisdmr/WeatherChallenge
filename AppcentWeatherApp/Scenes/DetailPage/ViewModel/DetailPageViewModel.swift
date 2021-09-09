@@ -61,6 +61,8 @@ class DetailPageViewModel: NSObject {
               
             ])
             
+            
+            
             let match = savedCities.enumerated().first(where: { $0.element.title == title})
             if match != nil {
                 self.delegate?.savedCity(result: false)
