@@ -58,7 +58,6 @@ class HeaderView: UIView {
                 minTempLabel.text = "/\(minTemp)°"
             }
             
-            //            weatherLabel.text = detay.weather_state_name ?? " - "
             if let weatherStatus = detay.weather_state_name {
                 weatherLabel.text = weatherStatus
             }

@@ -17,7 +17,7 @@ class API {
     
     fileprivate let encoding = JSONEncoding.default
     
-    func getWeathers(lattLong: String, sucees:@escaping ((_ status: [WeathersModel])-> Void), errorHandler:@escaping ((_ status: Bool)-> Void)){
+    func getWeathersWithCoordinates(lattLong: String, sucees:@escaping ((_ status: [WeathersModel])-> Void), errorHandler:@escaping ((_ status: Bool)-> Void)){
         
         let endpoint = coordinatesRequestBaseUrl + "\(lattLong)"
         sessionManager.request(endpoint, method: .get,encoding: JSONEncoding.default).responseData { (response) in
@@ -36,7 +36,7 @@ class API {
         }
     }
     
-    func getWeathers(query: String, sucees:@escaping ((_ status: [CityModel])-> Void), errorHandler:@escaping ((_ status: Bool)-> Void)){
+    func getWeathersWithSearch(query: String, sucees:@escaping ((_ status: [CityModel])-> Void), errorHandler:@escaping ((_ status: Bool)-> Void)){
         
         let endpoint = cityRequestBaseUrl + "\(query)"
         sessionManager.request(endpoint, method: .get,encoding: JSONEncoding.default).responseData { (response) in
@@ -55,7 +55,7 @@ class API {
         }
     }
     
-    func getDetails(woeid: Int, sucees:@escaping ((_ status: DetailModel)-> Void), errorHandler:@escaping ((_ status: Bool)-> Void)){
+    func getCityDetails(woeid: Int, sucees:@escaping ((_ status: DetailModel)-> Void), errorHandler:@escaping ((_ status: Bool)-> Void)){
         
         let endpoint = woeidRequestBaseUrl + "\(woeid)"
         sessionManager.request(endpoint, method: .get,encoding: JSONEncoding.default).responseData { (response) in

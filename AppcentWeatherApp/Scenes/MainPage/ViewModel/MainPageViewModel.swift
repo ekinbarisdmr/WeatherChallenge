@@ -43,7 +43,7 @@ class MainPageViewModel: NSObject {
     }
     
     func fetchWeathers() {
-        API.sharedManager.getWeathers(lattLong: self.coordinates) { (response) in
+        API.sharedManager.getWeathersWithCoordinates(lattLong: self.coordinates) { (response) in
             self.weatherList = response
             self.delegate?.changedStatus(status: .completed(nil))
             self.tableView.reloadData()

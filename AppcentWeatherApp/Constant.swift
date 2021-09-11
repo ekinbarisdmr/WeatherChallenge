@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-let coordinatesRequestBaseUrl = "https://www.metaweather.com/api/location/search/?lattlong="
+let coordinatesRequestBaseUrl = "https://www.metaweather.com/api/location/search/"
 let cityRequestBaseUrl = "https://www.metaweather.com/api/location/search/?query="
 let woeidRequestBaseUrl = "https://www.metaweather.com/api/location/"
 let mainPageTitle = "Weather List"

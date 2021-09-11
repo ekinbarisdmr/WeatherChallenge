@@ -23,7 +23,7 @@ class DetailPageViewModel: NSObject {
     var delegate: DetailPageViewModelDelegate?
 
     func fetchWeatherDetail() {
-        API.sharedManager.getDetails(woeid: self.selectedCity) { [self] (response) in
+        API.sharedManager.getCityDetails(woeid: self.selectedCity) { [self] (response) in
             weatherDetails = response
             if let detail = response.consolidated_weather {
                 details = detail

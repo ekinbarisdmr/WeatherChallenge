@@ -17,7 +17,7 @@ class SearchPageViewModel: NSObject {
     var delegate: SearchPageViewModelDelegate?
 
     func getCityList(cityName: String?) {
-        API.sharedManager.getWeathers(query: cityName ?? "") { (response) in
+        API.sharedManager.getWeathersWithSearch(query: cityName ?? "") { (response) in
             self.delegate?.getCityList(response: response)
             self.delegate?.changedStatus(status: .completed(nil))
         } errorHandler: { (error) in

@@ -44,6 +44,8 @@
 		315364D126E3C7EC0067A570 /* DetailPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315364CF26E3C7EC0067A570 /* DetailPageTableViewCell.swift */; };
 		315364D226E3C7EC0067A570 /* DetailPageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 315364D026E3C7EC0067A570 /* DetailPageTableViewCell.xib */; };
 		315364D426E3CB7A0067A570 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315364D326E3CB7A0067A570 /* DetailPageViewController.swift */; };
+		31B9C6C126ECC247007ECDBA /* RequestModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B9C6C026ECC247007ECDBA /* RequestModels.swift */; };
+		31B9C6C326ECC3C0007ECDBA /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B9C6C226ECC3C0007ECDBA /* Encodable.swift */; };
 		31DA0F9726E8C6F6000E1C8F /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DA0F9626E8C6F6000E1C8F /* FloatingButton.swift */; };
 		31DA0F9A26E8E3DE000E1C8F /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31DA0F9926E8E3DE000E1C8F /* UIViewController.swift */; };
 		31DA0F9C26E8F00E000E1C8F /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31DA0F9B26E8F00E000E1C8F /* HeaderView.xib */; };
@@ -94,6 +96,8 @@
 		315364CF26E3C7EC0067A570 /* DetailPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageTableViewCell.swift; sourceTree = "<group>"; };
 		315364D026E3C7EC0067A570 /* DetailPageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPageTableViewCell.xib; sourceTree = "<group>"; };
 		315364D326E3CB7A0067A570 /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
+		31B9C6C026ECC247007ECDBA /* RequestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModels.swift; sourceTree = "<group>"; };
+		31B9C6C226ECC3C0007ECDBA /* Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
 		31DA0F9626E8C6F6000E1C8F /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		31DA0F9926E8E3DE000E1C8F /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		31DA0F9B26E8F00E000E1C8F /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -202,6 +206,7 @@
 				315364AE26E247790067A570 /* CityModel.swift */,
 				315364CA26E2CBCB0067A570 /* DetailModel.swift */,
 				313886F126E799D9003E5E16 /* SaveModel.swift */,
+				31B9C6C026ECC247007ECDBA /* RequestModels.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 				313886DC26E55C13003E5E16 /* UIAlert.swift */,
 				313886E926E6D981003E5E16 /* UITableViewExtension.swift */,
 				31DA0F9926E8E3DE000E1C8F /* UIViewController.swift */,
+				31B9C6C226ECC3C0007ECDBA /* Encodable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -543,12 +549,14 @@
 				313886EE26E78464003E5E16 /* SearchPageTableView.swift in Sources */,
 				313886F026E78F80003E5E16 /* SearchBar.swift in Sources */,
 				315364D126E3C7EC0067A570 /* DetailPageTableViewCell.swift in Sources */,
+				31B9C6C326ECC3C0007ECDBA /* Encodable.swift in Sources */,
 				315364A626E14B5F0067A570 /* Double.swift in Sources */,
 				315364B226E249070067A570 /* SearchPageTableViewCell.swift in Sources */,
 				313886F526E7A19F003E5E16 /* StoreManager.swift in Sources */,
 				315364D426E3CB7A0067A570 /* DetailPageViewController.swift in Sources */,
 				3153649626E134950067A570 /* API.swift in Sources */,
 				31DA0F9726E8C6F6000E1C8F /* FloatingButton.swift in Sources */,
+				31B9C6C126ECC247007ECDBA /* RequestModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
